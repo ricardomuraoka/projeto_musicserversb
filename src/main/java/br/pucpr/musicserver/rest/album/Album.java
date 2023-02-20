@@ -20,8 +20,8 @@ import java.util.Set;
         name = "Album.search",
         query = "SELECT a FROM Album a LEFT JOIN a.artists artist " +
                 "WHERE COALESCE(artist.id, null) = COALESCE(:artist, artist.id) " +
-                "AND a.year >= :from AND a.year <= :to"
-
+                "AND a.year >= :from AND a.year <= :to " +
+                "AND (:genre IS NULL OR EXISTS (SELECT 1 FROM Artist ar JOIN ar.genres g WHERE ar.id = artist.id AND g = :genre))"
 )
 
 

@@ -27,14 +27,14 @@ public class AlbumService {
     }
 
 
-    public List<Album> search(Long artist, Integer from, Integer to) {
+    public List<Album> search(Long artist, Integer from, Integer to, String genre) {
         if (from == null) {
             from = 0;
         }
         if (to == null) {
             to = Integer.MAX_VALUE;
         }
-        return repository.search(artist, from, to);
+        return repository.search(artist, from, to, genre);
     }
 
     public Album add(Album album) {

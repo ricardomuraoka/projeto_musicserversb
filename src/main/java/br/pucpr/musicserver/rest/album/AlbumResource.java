@@ -30,9 +30,10 @@ public class AlbumResource {
     public List<Album> search(
             @RequestParam(value = "artist", required = false) Long artist,
             @RequestParam(value = "from", required = false) Integer from,
-            @RequestParam(value = "to", required = false) Integer to
+            @RequestParam(value = "to", required = false) Integer to,
+            @RequestParam(value = "genre", required = false) String genre
     ) {
-        return service.search(artist, from, to);
+        return service.search(artist, from, to, genre);
     }
 
     @PostMapping

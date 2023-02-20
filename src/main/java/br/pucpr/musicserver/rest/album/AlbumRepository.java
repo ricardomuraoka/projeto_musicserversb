@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface AlbumRepository extends JpaRepository <Album, Long>{
     public List<Album> searchByName(String name);
-    public List<Album> search(Long artist, Integer from, Integer to);
+    public List<Album> search(Long artist, Integer from, Integer to, String genre);
 }
